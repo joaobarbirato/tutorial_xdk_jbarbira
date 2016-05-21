@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<!--
+  * Please see the included README.md file for license terms and conditions.
+  -->
+<head>
+    <title>Minhas Pizzas Preferidas</title>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+
+    <!-- see http://webdesign.tutsplus.com/tutorials/htmlcss-tutorials/quick-tip-dont-forget-the-viewport-meta-tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <style>
+        /* following two viewport lines are equivalent to the meta viewport statement above, needed for Windows */
+        /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html and http://dev.w3.org/csswg/css-device-adapt/ */
+        @-ms-viewport { width: 100vw ; zoom: 100% ; }  @viewport { width: 100vw ; zoom: 100% ; }
+        @-ms-viewport { user-zoom: fixed ; }           @viewport { user-zoom: fixed ; }
+    </style>
+
+    <script src="cordova.js"></script>          <!-- phantom library, needed for Cordova api calls, added during build -->
+    <script src="js/app.js"></script>           <!-- recommended location of your JavaScript code relative to other JS files -->
+    <script src="xdk/init-dev.js"></script>     <!-- normalizes device and document ready events, see README for details -->
+    
+    <!-- jQuery -->
+    
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+    <script srcs="js/bd.js"></script>
+
+</head>
+
+<body>
+
+    <!-- div abaixo representa a página da listagem de pizzas -->
+    
+    <div data-role="page" id="listPizzas">
+        <!-- cabeçalho -->
+        <div data-role="header" data-theme="a"> <!-- definindo botão -->
+            <a href="#IncluirPizzas" data-role="button" class="ui-btn-right home8tn" data-theme="c" data-icon="plus" data-transition="slideup">Incluir</a>
+            
+            <!-- uso de strings externas mvc -->
+            
+            <h1>Lista Pizzas</h1> <!-- título do botão -->
+            
+        </div>
+        
+        <!-- corpo da página -->
+        
+        <div data-role="content">
+            
+            <!-- Tabela com a listagem de todas as pizzas adicionadas -->
+            <ul data-role="listview" data-theme="c" id="pizzas">
+                <p id="semErros" style="display:nome;">Nenhuma Pizza Cadastrada</p>
+            </ul>
+        </div>
+        
+    </div>
+    
+    <!-- Tela de Cadastro -->
+    <div data-role="page" id="IncluirPizzas">
+        <div data-role="header" data-theme="a"> <!-- botão -->
+            <h1>Incluir Pizzas</h1>
+        </div>
+        <div datarole="content">
+            <div class="form-Pizzas"> <!-- formulário -->
+                <form id="form-pizzas">
+                    <input id="NomePizza" />
+                    <input type="button" value="Incluir" id="IncluirPizzas" data-icon="plus" />
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
+
+</body>
+</html>
